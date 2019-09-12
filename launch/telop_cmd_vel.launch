@@ -1,0 +1,13 @@
+<launch>
+   <!-- joy node -->
+   <node respawn="true" pkg="joy" type="joy_node" name="joy" >
+      <param name="dev" type="string" value="/dev/input/js0" />
+      <param name="deadzone" value="0.2" />
+      <param name="default_trig_val" value="true" />
+   </node>
+
+   <!--joy teleop -->
+   <node pkg="robot40_teleop_joy" name="robot40_teleop_joy" type="teleop_joy_node" output="screen">
+      <remap from="cmd_joy" to="cmd_vel"/>
+   </node>
+</launch>
