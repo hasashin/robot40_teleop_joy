@@ -3,6 +3,7 @@ project(robot40_teleop_joy)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
+  std_msgs
   geometry_msgs
   joy
   roscpp
@@ -20,7 +21,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package( 
-  CATKIN_DEPENDS geometry_msgs joy roscpp rospy sensor_msgs 
+  CATKIN_DEPENDS std_msgs geometry_msgs joy roscpp rospy sensor_msgs 
 )
 
 ###########
@@ -32,9 +33,6 @@ include_directories(${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp executable
 add_executable(robot40_telejoy_node src/robot40_telejoy_node.cpp)
-
-## Add cmake target dependencies of the executable/library
-add_dependencies(robot40_telejoy_node robot40_telejoy_node_cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(robot40_telejoy_node ${catkin_LIBRARIES})
