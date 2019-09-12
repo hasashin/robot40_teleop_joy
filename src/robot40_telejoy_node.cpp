@@ -97,7 +97,7 @@ void Teleop::CallbackJoy(const sensor_msgs::Joy::ConstPtr& joy)
 			{
 				velocities.linear.x=0;
 				velocities.angular.z=0;
-				ROS_ERROR("telop_joy_node: operate mode not known, falling back to mode 0. If error repeats try restarting node");
+				ROS_ERROR("robot40_telejoy_node: operate mode not known, falling back to mode 0. If error repeats try restarting node");
 				break;
 			}
 		}
@@ -113,7 +113,7 @@ void Teleop::publishEnabled(){
 
 int main(int argc, char** argv)
 {
-	ros::init(argc, argv, "teleop_joy_node");
+	ros::init(argc, argv, "robot40_telejoy_node");
 	Teleop teleop;
 	ros::Rate loop_rate(10);
 
