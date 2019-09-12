@@ -31,10 +31,10 @@ catkin_package(
 include_directories(${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp executable
-add_executable(teleop_joy_node src/teleop_joy_node.cpp)
+add_executable(robot40_telejoy_node src/robot40_telejoy_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
-add_dependencies(teleop_joy_node teleop_joy_node_cpp)
+add_dependencies(robot40_telejoy_node robot40_telejoy_node_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(teleop_joy_node ${catkin_LIBRARIES})
+target_link_libraries(robot40_telejoy_node ${catkin_LIBRARIES})
