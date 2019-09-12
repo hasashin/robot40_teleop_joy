@@ -57,6 +57,18 @@ void Teleop::CallbackJoy(const sensor_msgs::Joy::ConstPtr& joy)
 			angular_divider = 2.f;
 			ROS_DEBUG("Angular velocity is half speed");
 		}
+		if(operate_mode == 0 && joy->buttons[5]){
+			ROS_DEBUG("Turbo is active");
+		}
+		if(operate_mode == 0 && !joy->buttons[5]){
+			ROS_DEBUG("Turbo is disabled");
+		}
+		if(operate_mode == 0 && joy->buttons[4]){
+			ROS_DEBUG("Slowmo is active");
+		}
+		if(operate_mode == 0 && !joy->buttons[4]){
+			ROS_DEBUG("Slowmo is disabled");
+		}
 
 		switch(this->operate_mode)
 		{
